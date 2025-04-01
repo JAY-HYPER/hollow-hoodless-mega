@@ -59,7 +59,9 @@ function downloadCompositeImage() {
 
   ctx.drawImage(main, 0, padding);
   if (sub.src) ctx.drawImage(sub, 0, padding);
+  /*
   if (logo.src) ctx.drawImage(logo, 0, padding);
+  */
 
   ctx.fillStyle = '#111';
   ctx.font = '20px Pretendard, sans-serif';
