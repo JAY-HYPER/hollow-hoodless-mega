@@ -31,6 +31,7 @@ function changeSideColor(code) {
 */
 
 function downloadCompositeImage() {
+  const base = document.getElementById('base-layer');
   const main = document.getElementById('main-layer');
   const sub = document.getElementById('sub-layer');
   /*
@@ -53,18 +54,16 @@ function downloadCompositeImage() {
   ctx.fillRect(0, 0, width, height);
 
   ctx.fillStyle = '#111';
-  ctx.font = '24px Pretendard, sans-serif';
+  ctx.font = '50px Pretendard, sans-serif';
   ctx.textAlign = 'center';
   ctx.fillText(title, width / 2, 40);
 
-  ctx.drawImage(main, 0, padding);
+  ctx.drawImage(base, 0, padding);
+  if (main.src) ctx.drawImage(main, 0, padding);
   if (sub.src) ctx.drawImage(sub, 0, padding);
-  /*
-  if (logo.src) ctx.drawImage(logo, 0, padding);
-  */
 
   ctx.fillStyle = '#111';
-  ctx.font = '20px Pretendard, sans-serif';
+  ctx.font = '50px Pretendard, sans-serif';
   ctx.fillText(text, width / 2, height - 20);
 
   const today = new Date();
